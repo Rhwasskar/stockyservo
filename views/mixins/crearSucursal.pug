@@ -1,0 +1,7 @@
+mixin crearSucursal(sucursal ={})
+    form.agregar-proyecto(action=`/nueva-sucursal/${sucursal.id? sucursal.id : ''}` method="POST")
+        .campo
+            label(for="nombre") Nombre Sucursal
+            input(value=sucursal.nombre type="text" id="nombre" name="nombre" placeholder="nombre de la sucursal")
+        .campo.enviar
+            input(type="submit" value=`${sucursal.nombre ? 'Guardar' : 'Agregar'}` class="boton")

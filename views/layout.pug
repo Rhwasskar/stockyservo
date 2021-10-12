@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=devidce-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie-edge")
+		link(rel="stylesheet", href="/css/normalize.css")
+		link(rel="stylesheet", href="/css/app.css")
+		title #{nombrePagina}
+	body
+		header.barra
+			h1 StockyNotes - Administrador de Sucursales
+			a(href="#") Cerrar Sesión
+			
+		main.contenedor
+			aside.contenedor-proyectos
+				.panel.crear-proyecto
+					a(href="/nueva-sucursal" class="boton" fontsize="8" ) Nueva_Sucursal
+						span +
+				.panel.lista-proyectos
+					h2 Sucursales
+					ul#sucursales.sucursales
+						if sucursales
+							each sucursal in sucursales
+								li
+									a(href=`/sucursales/${sucursal.url}`)= sucursal.nombre
+						
+						
+
+
+			block contenido
+
+			//- pre= vardump(proyectos)

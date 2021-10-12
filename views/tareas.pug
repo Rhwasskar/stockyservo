@@ -1,0 +1,20 @@
+extends layout
+
+block contenido
+	.contenido-principal
+		//- -var nombrePagina  = arregloVariables.nombrePagina;
+		//- -var errores = arregloVariables.errores;
+
+		h1 #{nombrePagina} - #{sucursal.nombre}
+		
+
+		//TODO formulario
+
+		//todo - Listado de pendientes
+
+		//- pre= vardump(sucursal)
+		//acciones dque se pueden realizar
+
+		.contenedor-acciones
+			a(href=`/sucursal/editar/${sucursal.id}` class="boton") Editar Sucursal
+			button#eliminar-sucursal(type="button" class="boton eliminar") Eliminar Sucursal
